@@ -8,13 +8,30 @@
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
   <title>Lab 10 - Return of the Party Horn</title>
 
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXX');
+  </script>
+
   <!-- JS Confetti -->
   <script src="assets/scripts/js-confetti.browser.js"></script>
 
   <!-- Main Stylesheet & Scripts -->
   <link rel="stylesheet" href="assets/styles/global.css" />
   <script src="assets/scripts/partyHorn.js" type="module"></script>
+
+  <style>
+    .blue {
+      background-color: #2c76c5;
+    }
+  </style>  
+
 </head>
+
 
 <body>
   <header>
@@ -42,6 +59,17 @@
       <audio class="hidden" src=""></audio>
     </section>
   </main>
+
+  <!-- A/B Testing Script -->
+  <script>
+    const randomNumber = Math.random();
+    const shouldApplyClass = randomNumber < 0.5;
+    const body = document.querySelector('body');
+    if (shouldApplyClass) {
+      body.classList.add('blue');
+    }
+  </script>
+
 </body>
 
 </html>
